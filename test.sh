@@ -14,8 +14,6 @@ for index in ${!extra[@]}; do
     printf $separator >> $fileName
   fi
   
-  value=$extra[$index]
-  
-  printf "$value$separator" >> $fileName
+  printf "${extra[$index]}$separator" >> $fileName
   
 done
