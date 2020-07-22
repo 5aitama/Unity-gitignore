@@ -1,0 +1,5 @@
+# For the Mac OS user
+**/*.DS_Store
+
+# VS Code preferences
+.vscode/
