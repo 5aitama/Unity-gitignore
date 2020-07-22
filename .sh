@@ -2,18 +2,7 @@
 
 filePath=".gitignore"
 gitignoreUrl="https://raw.githubusercontent.com/github/gitignore/master/Unity.gitignore"
-separator="\n"
+extraUrl="https://raw.githubusercontent.com/5aitama/Unity-gitignore/master/extras"
 
-# File(s) or folder(s) to add in the .gitignore file.
-extra=("# For Mac OS user\n**/*.DS_Store")
-
-wget -q --output-document=$filePath $gitignoreUrl
-
-for index in ${!extra[@]}; do
-  if [ $index = 0 ]; then
-    printf $separator >> $filePath
-  fi
-  
-  printf "${extra[$index]}$separator" >> $filePath
-  
-done
+curl $gitignoreUrl --output $filePath
+printf "\n$(curl -s $extraUrl)\n" >> $filePath
