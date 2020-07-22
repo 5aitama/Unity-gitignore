@@ -9,7 +9,7 @@ extra=("# For Mac OS user\n**/.DS_Store")
 wget -q --output-document=$fileName $gitignoreUrl
 
 for index in ${!extra[@]}; do
-  if [ $index = 0 ]
+  if [ $index = 0 ]; then
     printf "\n" >> $fileName
   fi
   
